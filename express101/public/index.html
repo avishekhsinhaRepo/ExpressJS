@@ -1,0 +1,19 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    function fetchData(){
+       var request =  $.ajax({
+            method:'POST',
+            url:'users',
+            dataType:"json",
+            mimeType: 'application/json',
+            type:'application/json',
+            data:{
+                userName:'Rob'
+            },
+            success: (data,status,xhr)=>console.log(data),
+            error:(jqXhr, textStatus, errorMessage)=> console.log("Error",errorMessage)
+        });
+    }
+</script>
+
+<button onclick="fetchData()">Fetch Data</button>
